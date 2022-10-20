@@ -55,24 +55,34 @@ const name=document.getElementById("name")
 
 submitBtnEl.addEventListener("click",(e)=>{
     e.preventDefault();
-    localStorage.setItem("user-Name",userName.value)
-    localStorage.setItem("user-Password",passwordEl.value)
-    SignUp.style.display="none"
-    LogIn.style.display="block"
+    if(userName.value.length >=3 && passwordEl.value.length >=4){
+        localStorage.setItem("user-Name",userName.value)
+        localStorage.setItem("user-Password",passwordEl.value)
+        SignUp.style.display="none"
+        LogIn.style.display="block"
+    }
+    else{
+        alert("Iltimos UserName 3tadan ko`p va parol 4tadan ko`p bo`lsun")
+    }
     
 })
 
 LoginsubmitBtnEl.addEventListener("click",(e)=>{
     e.preventDefault();
-    let userNameLocal=localStorage.getItem("user-Name")
-    let userPasswordLocal=localStorage.getItem("user-Password")
-    if(LoginuserName.value == userNameLocal && LoginpasswordEl.value == userPasswordLocal){
-        LogIn.style.display="none"
-        complate.style.display="flex"
-        name.innerHTML=userNameLocal + " Hush Kelibsiz"
+    if(LoginuserName.value.length >=3 && LoginpasswordEl.value.length >=4){
+        let userNameLocal=localStorage.getItem("user-Name")
+        let userPasswordLocal=localStorage.getItem("user-Password")
+        if(LoginuserName.value == userNameLocal && LoginpasswordEl.value == userPasswordLocal){
+            LogIn.style.display="none"
+            complate.style.display="flex"
+            name.innerHTML=userNameLocal + " Hush Kelibsiz"
+        }
+        else{
+            alert("Iltimos Boshqattan ro`yhatdan o`ting")
+        }
     }
     else{
-        alert("Iltimos Boshqattan ro`yhatdan o`ting")
+        alert("Iltimos UserName 3tadan ko`p va parol 4tadan ko`p bo`lsun")
     }
 })
 
