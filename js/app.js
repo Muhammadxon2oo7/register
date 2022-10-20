@@ -127,5 +127,19 @@ LoginsubmitBtnEl.addEventListener("click",(e)=>{
         }
     }
 })
+let userNameLocal=localStorage.getItem("user-Name")
+let userPasswordLocal=localStorage.getItem("user-Password")
+if(userNameLocal && userPasswordLocal){
+    SignUp.style.display="none"
+    LogIn.style.display="none"
+    complate.style.display="flex"
+    name.innerHTML=userNameLocal + " Hush Kelibsiz"
+
+}
+else{
+    SignUp.style.display="block"
+    LogIn.style.display="none"
+    complate.style.display="none"
+}
 
 
