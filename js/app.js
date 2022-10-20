@@ -53,6 +53,23 @@ const name=document.getElementById("name")
     })
 
 
+userName.addEventListener("focusout",()=>{
+    if(userName.value.length <3){
+        userName.style.border="2px solid red"
+    }
+    else{
+        userName.style.border=" 1px solid grey"
+    }
+})
+passwordEl.addEventListener("focusout",()=>{
+    if(passwordEl.value.length <4){
+        passwordEl.style.border="2px solid red"
+    }
+    else{
+        passwordEl.style.border=" 1px solid grey"
+    }
+})
+
 submitBtnEl.addEventListener("click",(e)=>{
     e.preventDefault();
     if(userName.value.length >=3 && passwordEl.value.length >=4){
@@ -62,9 +79,26 @@ submitBtnEl.addEventListener("click",(e)=>{
         LogIn.style.display="block"
     }
     else{
-        alert("Iltimos UserName 3tadan ko`p va parol 4tadan ko`p bo`lsun")
+        alert("Iltimos UserName 3tadan ko`p va parol 4tadan ko`p bo`lsun") 
     }
     
+})
+
+LoginuserName.addEventListener("focusout",()=>{
+    if(LoginuserName.value.length <3 ){
+        LoginuserName.style.border="2px solid red"
+    }
+    else{
+        LoginuserName.style.border=" 1px solid grey"
+    }
+})
+LoginpasswordEl.addEventListener("focusout",()=>{
+    if(LoginpasswordEl.value.length <3 ){
+        LoginpasswordEl.style.border="2px solid red"
+    }
+    else{
+        LoginpasswordEl.style.border=" 1px solid grey"
+    }
 })
 
 LoginsubmitBtnEl.addEventListener("click",(e)=>{
@@ -83,6 +117,15 @@ LoginsubmitBtnEl.addEventListener("click",(e)=>{
     }
     else{
         alert("Iltimos UserName 3tadan ko`p va parol 4tadan ko`p bo`lsun")
+        if(LoginuserName.value.length <3 || LoginpasswordEl.value.length <4){
+            LoginuserName.style.border="2px solid red"
+            LoginpasswordEl.style.border="2px solid red"
+        }
+        else{
+            LoginuserName.style.border=" 1px solid grey"
+            LoginpasswordEl.style.border=" 1px solid grey"
+        }
     }
 })
+
 
