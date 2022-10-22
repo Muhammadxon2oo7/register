@@ -53,7 +53,7 @@ const name=document.getElementById("name")
     })
 
 
-userName.addEventListener("focusout",()=>{
+userName.addEventListener("input",()=>{
     if(userName.value.length <3){
         userName.style.border="2px solid red"
     }
@@ -61,7 +61,7 @@ userName.addEventListener("focusout",()=>{
         userName.style.border=" 1px solid grey"
     }
 })
-passwordEl.addEventListener("focusout",()=>{
+passwordEl.addEventListener("input",()=>{
     if(passwordEl.value.length <4){
         passwordEl.style.border="2px solid red"
     }
@@ -84,7 +84,7 @@ submitBtnEl.addEventListener("click",(e)=>{
     
 })
 
-LoginuserName.addEventListener("focusout",()=>{
+LoginuserName.addEventListener("input",()=>{
     if(LoginuserName.value.length <3 ){
         LoginuserName.style.border="2px solid red"
     }
@@ -92,7 +92,7 @@ LoginuserName.addEventListener("focusout",()=>{
         LoginuserName.style.border=" 1px solid grey"
     }
 })
-LoginpasswordEl.addEventListener("focusout",()=>{
+LoginpasswordEl.addEventListener("input",()=>{
     if(LoginpasswordEl.value.length <3 ){
         LoginpasswordEl.style.border="2px solid red"
     }
